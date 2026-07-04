@@ -50,7 +50,6 @@
   .btn-run:hover { background: #26913f; }
   .btn-clear { background: #e74c3c; }
   .btn-clear:hover { background: #c0392b; }
-
   #editor {
     width: 100%;
     flex: 1;
@@ -71,7 +70,6 @@
 </style>
 </head>
 <body>
-
 <div class="container">
   <div class="pane pane-left">
     <div class="toolbar">
@@ -82,64 +80,14 @@
     <textarea id="editor" spellcheck="false">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-&lt;title&gt;HTML Tester Online&lt;/title&gt;
-&lt;style&gt;
-  body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #2c3e50, #3a4a63, #2c3e50);
-    background-size: 400% 400%;
-    animation: gradientMove 12s ease infinite;
-    font-family: "Segoe UI", Arial, sans-serif;
-    overflow: hidden;
-  }
-  @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  .box {
-    text-align: center;
-  }
-  h1 {
-    color: #eef1f5;
-    font-size: 44px;
-    margin: 0;
-    letter-spacing: 1.5px;
-    text-shadow: 0 0 6px rgba(120,170,220,0.35);
-    animation: glow 3s ease-in-out infinite alternate;
-  }
-  @keyframes glow {
-    from { text-shadow: 0 0 6px rgba(120,170,220,0.3); }
-    to   { text-shadow: 0 0 14px rgba(120,170,220,0.55); }
-  }
-  p {
-    margin-top: 16px;
-    font-size: 18px;
-    color: #cfd6e0;
-    opacity: 0;
-    animation: fadeIn 1.8s ease forwards 0.5s;
-  }
-  @keyframes fadeIn {
-    to { opacity: 1; transform: translateY(0); }
-    from { opacity: 0; transform: translateY(10px); }
-  }
-  p span {
-    font-weight: bold;
-    color: #7fb2e0;
-  }
-&lt;/style&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Test&lt;/title&gt;
 &lt;/head&gt;
-&lt;body&gt;
-
-&lt;div class="box"&gt;
-  &lt;h1&gt;HTML Tester Online&lt;/h1&gt;
-  &lt;p&gt;được tạo bởi &lt;span&gt;Đặng Minh Nhựt&lt;/span&gt;&lt;/p&gt;
-&lt;/div&gt;
-
+&lt;body style="display:flex; justify-content:center; align-items:center; height:100vh; margin:0; font-family:sans-serif;"&gt;
+    &lt;div style="text-align:center;"&gt;
+        &lt;h1 style="font-size:2rem;"&gt;HTML Tester Online&lt;/h1&gt;
+        &lt;p style="font-size:1.2rem; color:#333;"&gt;được tạo bởi &lt;strong&gt;Minh Nhựt&lt;/strong&gt;&lt;/p&gt;
+    &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</textarea>
   </div>
@@ -147,7 +95,6 @@
     <iframe id="preview"></iframe>
   </div>
 </div>
-
 <script>
   function runCode() {
     const code = document.getElementById('editor').value;
@@ -155,16 +102,13 @@
     // Dùng srcdoc thay vì document.write để đảm bảo luôn cập nhật đúng nội dung mới
     preview.srcdoc = code;
   }
-
   function clearCode() {
     document.getElementById('editor').value = '';
     const preview = document.getElementById('preview');
     preview.srcdoc = '';
   }
-
   // Chạy sẵn nội dung mẫu khi mở trang
   window.onload = runCode;
 </script>
-
 </body>
 </html>
